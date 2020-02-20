@@ -1,0 +1,172 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'leico/autodate.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_ignore_case = 1
+    let g:deoplete#enable_smart_case = 1
+    " <TAB>: completion.
+    imap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+    " <S-TAB>: completion back.
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+'''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_color_change_percent = 6
+  let g:indent_guides_auto_colors=0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=236
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=237
+  let g:indent_guides_guide_size=2
+'''
+
+[[plugins]] # gccでコメント
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]] # tomlのsyntax
+repo = 'cespare/vim-toml'
+
+[[plugins]] # 行末の不要な半角スペースを可視化
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+  let g:neosnippet#snippets_directory = '~/.config/nvim/snippets'
+  let g:neosnippet#enable_snipmate_compatibility = 1
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+      set conceallevel=2 concealcursor=niv
+  endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]] # クオートや括弧の対を自動入力
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+merged = '0'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+hook_add = '''
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_always_populate_loc_list = 0
+  let g:syntastic_auto_loc_list = 0
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_perl_interpreter = 1
+  let g:syntastic_yaml_yamlxs_exec = 1
+'''
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+repo  = 'prettier/vim-prettier'
+build = 'npm install'
+rev   = 'release/1.x'
+on_ft = ['javascript','typescript','vue','css','scss','json','markdown','yaml']
+hook_add = '''
+  let g:prettier#autoformat = 0
+  let g:prettier#quickfix_enabled = 0
+  let g:prettier#config#jsx_bracket_same_line = 'true'
+  autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.jsx,*.tsx,*.json,*.md,*.yaml,*.yml PrettierAsync
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hook_add = '''
+  let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+# pip install python-language-server
+hook_add = '''
+if executable('typescript-language-server')
+  augroup LspTypeScript
+      au!
+      autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript'],
+        \ })
+      autocmd FileType typescript setlocal omnifunc=lsp#complete
+  augroup END :echomsg "vim-lsp with `typescript-language-server` enabled"
+else
+  :echomsg "vim-lsp for typescript unavailable"
+endif
+
+if (executable('pyls'))
+    augroup LspPython
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'pyls',
+            \ 'cmd': { server_info -> ['pyls'] },
+            \ 'whitelist': ['python'],
+            \})
+    augroup END
+endif
+
+nnoremap <silent> <C-]> :LspPeekDefinition<CR>
+nnoremap <silent> <C-h> :LspHover<CR>
+nnoremap <silent> <C-r> :LspReferences<CR>
+nnoremap <silent> <C-i> :LspImplementation<CR>
+nnoremap <silent> <C-n> :LspNextError<CR>
+
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_error = {'text': '!!'}
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_virtual_text_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
