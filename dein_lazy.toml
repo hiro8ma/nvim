@@ -2,23 +2,3 @@
 repo = 'haya14busa/dein-command.vim'
 on_cmd = 'Dein'
 
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-# let g:go_def_mapping_enabled = 0
-# let g:go_doc_keywordprg_enabled = 0
-hook_add = '''
-  let g:go_fmt_command = "goimports"
-  let g:go_addtags_transform = "camelcase"
-  let g:go_metalinter_autosave = 1
-  let g:go_auto_type_info = 1
-'''
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  autocmd VimEnter * execute 'NERDTree'
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-  let g:NERDTreeShowHidden=1
-''
-

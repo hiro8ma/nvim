@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/Users/hiroma/.config/nvim'
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd/task'
+let g:netrw_dirhist_1='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd'
+let g:netrw_dirhist_0='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core'
+let g:netrw_dirhist_9='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd/task'
+let g:netrw_dirhist_8='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd'
+let g:netrw_dirhist_7='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core'
+let g:netrw_dirhist_6='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd/task'
+let g:netrw_dirhist_5='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd'
+let g:netrw_dirhist_4='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core'
+let g:netrw_dirhist_3='/Users/hiroma/go/src/github.com/mm-technologies/magic-playbook-core/cmd/task'
