@@ -40,7 +40,11 @@ set ambiwidth=double
 set laststatus=2
 set statusline=%f
 set statusline+=%=
-set statusline+=[LOW=%l/%L]
+
+" set rtp+=$HOME/ghq/golang.org/x/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' 
+" autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+" autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 inoremap <silent> jj <ESC>
 nmap <Esc><Esc> :nohl<CR>
@@ -71,32 +75,33 @@ xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 xnoremap & :&&<CR>
 
-let s:dein_config_dir =$XDG_CONFIG_HOME . '/nvim'
-let s:dein_cache_dir  =$XDG_CACHE_HOME  . '/dein'
+let g:terraform_fmt_on_save=1
 
 "dein start---------------------------
 if &compatible
   set nocompatible
 endif
 
-set runtimepath +=$XDG_CACHE_HOME/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state(s:dein_cache_dir)
-  call dein#begin(s:dein_cache_dir)
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  call dein#load_toml(s:dein_config_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:dein_config_dir . '/dein_lazy.toml', {'lazy': 1})
+if dein#load_state('$HOME/.cache/dein')
+  call dein#begin('$HOME/.cache/dein')
+
+  call dein#load_toml('$HOME/.config/nvim/dein.toml', {'lazy': 0})
+  call dein#load_toml('$HOME/.config/nvim/dein_lazy.toml', {'lazy': 1})
 
   call dein#end()
   call dein#save_state()
 endif
 
+filetype plugin indent on
+syntax enable
+
 if dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on
-syntax enable
 "dein end-----------------------------
 
 autocmd ColorScheme * highlight Normal ctermbg=none
@@ -104,5 +109,5 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 
 autocmd InsertLeave * set nopaste
 
-colorscheme onedark
+colorscheme hybrid
 let g:airline_theme='oceanicnext'
