@@ -14,34 +14,6 @@ return {
           ["<space>"] = "none",
         },
       },
-      default_component_configs = {
-        indent = {
-          indent_size = 2,
-          padding = 1,
-        },
-        icon = {
-          folder_closed = "",
-          folder_open = "",
-          folder_empty = "",
-        },
-        name = {
-          trailing_slash = false,
-          use_git_status_colors = true,
-        },
-        git_status = {
-          symbols = {
-            added     = "+",
-            modified  = "~",
-            deleted   = "x",
-            renamed   = "r",
-            untracked = "?",
-            ignored   = "-",
-            unstaged  = "U",
-            staged    = "S",
-            conflict  = "!",
-          },
-        },
-      },
       filesystem = {
         filtered_items = {
           visible = true,
