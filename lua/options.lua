@@ -37,3 +37,4 @@ vim.opt.autowrite = true
 vim.opt.smartindent = true
 vim.opt.ambiwidth = "double"
 vim.opt.laststatus = 2
+vim.opt.clipboard = "unnamedplus"

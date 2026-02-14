@@ -55,6 +55,10 @@ return {
 
 Go, Rust, TypeScript/JavaScript, Python, C, Dart/Flutter, Terraform
 
+## Git コミット
+
+- `Co-Authored-By` は付けない
+
 ## ブランチ
 
 - `master` — 現行の Lua 設定

@@ -65,8 +65,6 @@ return {
       "pylsp",
       "clangd",
       "ts_ls",
-      "quick_lint_js",
-      "dartls",
     })
   end,
 }
