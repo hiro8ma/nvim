@@ -35,6 +35,6 @@ vim.opt.smartcase = true
 vim.opt.autoindent = true
 vim.opt.autowrite = true
 vim.opt.smartindent = true
-vim.opt.ambiwidth = "double"
+-- ambiwidth = "double" は削除。cellwidths.nvim で個別に制御する
 vim.opt.laststatus = 2
 vim.opt.clipboard = "unnamedplus"

@@ -64,6 +64,9 @@ require("lazy").setup({
   -- telescope (fzf.vim 置換)
   require("plugins.telescope"),
 
+  -- cellwidths (ambiwidth 代替: 日本語記号を個別に2セル幅に)
+  require("plugins.cellwidths"),
+
   -- claude-code.nvim
   require("plugins.claude-code"),
 
