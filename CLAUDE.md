@@ -59,7 +59,6 @@ Go, Rust, TypeScript/JavaScript, Python, C, Dart/Flutter, Terraform
 
 - `Co-Authored-By` は付けない
 
-## ブランチ
+## レガシー設定
 
-- `master` — 現行の Lua 設定
-- `dein-legacy` — 移行前の dein + VimScript 設定（アーカイブ）
+- `dein-legacy/` — 移行前の dein + VimScript 設定（アーカイブ、編集不要）
