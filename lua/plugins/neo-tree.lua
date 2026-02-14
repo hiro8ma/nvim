@@ -16,8 +16,13 @@ return {
       },
       default_component_configs = {
         indent = {
-          indent_size = 1,
-          padding = 0,
+          indent_size = 2,
+          padding = 1,
+        },
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
         },
         name = {
           trailing_slash = false,
