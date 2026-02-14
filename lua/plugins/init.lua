@@ -110,6 +110,9 @@ require("lazy").setup({
   -- Git
   { "tpope/vim-fugitive" },
 
+  -- LazyGit
+  require("plugins.lazygit"),
+
   -- Copilot
   { "github/copilot.vim" },
 })
