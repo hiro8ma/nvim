@@ -58,17 +58,14 @@ require("lazy").setup({
   -- Treesitter
   require("plugins.treesitter"),
 
-  -- neo-tree (NERDTree 置換)
-  require("plugins.neo-tree"),
+  -- NERDTree
+  require("plugins.nerdtree"),
 
   -- telescope (fzf.vim 置換)
   require("plugins.telescope"),
 
   -- cellwidths (ambiwidth 代替: 日本語記号を個別に2セル幅に)
   require("plugins.cellwidths"),
-
-  -- claude-code.nvim
-  require("plugins.claude-code"),
 
   -- gitsigns
   require("plugins.gitsigns"),
