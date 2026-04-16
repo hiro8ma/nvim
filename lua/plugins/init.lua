@@ -110,6 +110,9 @@ require("lazy").setup({
   -- LazyGit
   require("plugins.lazygit"),
 
+  -- fude.nvim (PR レビュー)
+  require("plugins.fude"),
+
   -- Copilot
   { "github/copilot.vim" },
 })
