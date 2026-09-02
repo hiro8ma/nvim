@@ -63,6 +63,7 @@ return {
       "gopls",
       "rust_analyzer",
       "pylsp",
+      "ruff",
       "clangd",
       "ts_ls",
     })

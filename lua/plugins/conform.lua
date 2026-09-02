@@ -6,7 +6,7 @@ return {
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
         rust = { "rustfmt" },
-        python = { "black" },
+        python = { "ruff_organize_imports", "ruff_format" },
         c = { "clang-format" },
         dart = { "dart_format" },
         terraform = { "terraform_fmt" },
