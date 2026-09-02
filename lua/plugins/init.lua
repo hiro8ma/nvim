@@ -113,6 +113,9 @@ require("lazy").setup({
   -- fude.nvim (PR レビュー)
   require("plugins.fude"),
 
+  -- neotest (Go テスト実行)
+  require("plugins.neotest"),
+
   -- Copilot
   { "github/copilot.vim" },
 })
